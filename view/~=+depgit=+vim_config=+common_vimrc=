@@ -95,7 +95,7 @@ setlocal spell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=
-setlocal statusline=%!Pl#Statusline(0,1)
+setlocal statusline=%!Pl#Statusline(12,1)
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -113,23 +113,38 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 21,30fold
-36,95fold
-101,219fold
-225,236fold
+37,95fold
+102,220fold
+227,237fold
+244,311fold
+318,356fold
+363,417fold
+424,445fold
+448,461fold
 21
 normal zc
-36
+37
 normal zc
-101
+102
 normal zc
-225
+227
 normal zc
-let s:l = 98 - ((79 * winheight(0) + 22) / 44)
+244
+normal zc
+318
+normal zc
+363
+normal zc
+424
+normal zo
+448
+normal zc
+let s:l = 487 - ((11 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-98
-normal! 0
+487
+normal! 02l
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :
