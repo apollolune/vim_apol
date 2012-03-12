@@ -1,5 +1,9 @@
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+inoremap <buffer> <silent> <C-D-CR> :call Toggle_task_status()i
+noremap <buffer> <silent> ;ta :call Toggle_task_status()
 vnoremap <buffer> <silent> [" :exe "normal! gv"|call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
 nnoremap <buffer> <silent> [" :call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
 vnoremap <buffer> <silent> [] m':exe "normal! gv"|call search('^\s*endf*\%[unction]\>', "bW")
@@ -12,6 +16,10 @@ vnoremap <buffer> <silent> ][ m':exe "normal! gv"|call search('^\s*endf*\%[un
 nnoremap <buffer> <silent> ][ m':call search('^\s*endf*\%[unction]\>', "W")
 vnoremap <buffer> <silent> ]] m':exe "normal! gv"|call search('^\s*fu\%[nction]\>', "W")
 nnoremap <buffer> <silent> ]] m':call search('^\s*fu\%[nction]\>', "W")
+noremap <buffer> <silent> <C-D-CR> :call Toggle_task_status()
+inoremap <buffer> <silent> ;ta :call Toggle_task_status()i
+let &cpo=s:cpo_save
+unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -33,8 +41,8 @@ setlocal completefunc=
 setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
-setlocal cursorcolumn
-setlocal cursorline
+setlocal nocursorcolumn
+setlocal nocursorline
 setlocal define=
 setlocal dictionary=
 setlocal nodiff
@@ -107,43 +115,39 @@ setlocal tags=~/depgit/.git/vim.tags,~/depgit/.git/tags,./tags,tags,~/.vim/systa
 setlocal textwidth=75
 setlocal thesaurus=
 setlocal noundofile
-setlocal nowinfixheight
-setlocal nowinfixwidth
+setlocal winfixheight
+setlocal winfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-21,30fold
-37,95fold
-102,220fold
-227,237fold
-244,311fold
-318,356fold
-363,417fold
-424,445fold
-448,461fold
-21
-normal zc
-37
-normal zc
-102
-normal zc
-227
-normal zc
-244
-normal zc
-318
-normal zc
-363
-normal zc
-424
+22,31fold
+22,31fold
+125,135fold
+142,209fold
+216,254fold
+261,315fold
+322,343fold
+22
 normal zo
-448
+22
 normal zc
-let s:l = 487 - ((11 * winheight(0) + 10) / 21)
+22
+normal zo
+125
+normal zo
+142
+normal zo
+216
+normal zo
+261
+normal zo
+322
+normal zo
+let s:l = 549 - ((37 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-487
+549
 normal! 02l
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
