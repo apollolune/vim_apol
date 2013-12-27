@@ -1,3 +1,10 @@
 Configuration files for vim
 $ ln -s path/to/this/dir ~/.vim
 The .vimrc file is also under git, see common_vimrc for details.
+---
+Additional directories / links :
+(d) view : for ":mkview"
+(l) bundle__c_vim__c_support__templates__Templates :
+Renvoit sur bundle/c.vim/c-support/templates/Templates
+C'est pour la configuration des headers du plugin c.vim.
+
