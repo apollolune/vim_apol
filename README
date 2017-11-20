@@ -7,4 +7,5 @@ Additional directories / links :
 (l) bundle__c_vim__c_support__templates__Templates :
 Renvoit sur bundle/c.vim/c-support/templates/Templates
 C'est pour la configuration des headers du plugin c.vim.
+(d) autoload : for vim-plug
 
